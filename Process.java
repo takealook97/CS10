@@ -3,7 +3,6 @@ import java.util.*;
 public class Process {
     static final char[] process = new char[3];
     static final HashMap<Character, Integer> processMap = new HashMap<>();
-    static int[] time = new int[3];
     Queue<ProcessInfo> queue = new LinkedList<>();
 
     void initialize() {
@@ -40,19 +39,5 @@ public class Process {
         process[2] = list.get(2);
     }
 
-    int[] getTime() {
-        while (true) {
-            if (time[0] == time[2] && time[0] < processMap.get(process[0])) {
-                time[0]++;
-                break;
-            } else if (time[1] == time[2] && time[1] < processMap.get(process[1])) {
-                time[1]++;
-                break;
-            } else if (time[0] != time[2] && time[2] < processMap.get(process[2])) {
-                time[2]++;
-                break;
-            }
-        }
-        return time;
-    }
+
 }

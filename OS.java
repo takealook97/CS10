@@ -5,6 +5,7 @@ public class OS {
         Process process = new Process();
         process.initialize();
         output.printReady();
-        output.printFrame(Process.process);
+        output.printProcess();
+        output.printEnd();
     }
 }
