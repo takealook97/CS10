@@ -7,8 +7,4 @@ public class ProcessInfo {
         this.alphabet = alphabet;
         this.time = time;
     }
-
-
-
-
 }

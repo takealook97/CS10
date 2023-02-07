@@ -4,5 +4,7 @@ public class OS {
         output.printInit();
         Process process = new Process();
         process.initialize();
+        output.printReady();
+        output.printFrame(Process.process);
     }
 }
