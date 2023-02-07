@@ -3,14 +3,14 @@ import java.util.*;
 public class Process {
     static final char[] process = new char[3];
     static final HashMap<Character, Integer> processMap = new HashMap<>();
-    Queue<ProcessInfo> queue = new LinkedList<>();
+    static Queue<ProcessInfo> queue = new LinkedList<>();
 
     void initialize() {
         makeProcessMap();
         getRandom();
-        queue.add(new ProcessInfo(process[0], getProcessTime(process[0])));
-        queue.add(new ProcessInfo(process[1], getProcessTime(process[1])));
-        queue.add(new ProcessInfo(process[2], getProcessTime(process[2])));
+        queue.add(new ProcessInfo(process[0], Processing.time[0], getProcessTime(process[0]), Processing.status[0]));
+        queue.add(new ProcessInfo(process[1], Processing.time[1], getProcessTime(process[1]), Processing.status[1]));
+        queue.add(new ProcessInfo(process[2], Processing.time[2], getProcessTime(process[2]), Processing.status[2]));
     }
 
     void makeProcessMap() {
@@ -20,10 +20,6 @@ public class Process {
         processMap.put('D', 10);
         processMap.put('E', 15);
         processMap.put('F', 21);
-    }
-
-    int getProcessTime(char input) {
-        return processMap.get(input);
     }
 
     void getRandom() {
@@ -39,5 +35,7 @@ public class Process {
         process[2] = list.get(2);
     }
 
-
+    int getProcessTime(char input) {
+        return processMap.get(input);
+    }
 }

@@ -22,9 +22,9 @@ public class Output {
             System.out.println(".");
             processing.processing();
             for (int i = 0; i < 3; i++) {
-                System.out.print(Process.process[i] + "(" + processing.status[i] + "), ");
+                System.out.print(Process.process[i] + "(" + Processing.status[i] + "), ");
                 System.out.print(Processing.time[i] + " / " + process.getProcessTime(Process.process[i]) + "sec , ");
-                System.out.println("waiting " + Processing.left[i]);
+                System.out.println("waiting " + Processing.waiting[i] + "sec");
             }
         }
     }
@@ -34,11 +34,11 @@ public class Output {
         //평균 반환시간 = (완료시간+대기시간 총합) / 3 = (결과)sec
         System.out.println("-----------------------------------------------------------------------");
         System.out.println("라운드로빈 방식 스케줄링이 종료되었습니다.");
-        System.out.print("평균 대기시간 = (" + Processing.left[0] + " + " + Processing.left[1] + " + " + Processing.left[2] + ") / 3 = ");
-        System.out.println(String.format("%.1f", (double) (Processing.left[0] + Processing.left[1] + Processing.left[2]) / 3) + "sec");
+        System.out.print("평균 대기시간 = (" + Processing.waiting[0] + " + " + Processing.waiting[1] + " + " + Processing.waiting[2] + ") / 3 = ");
+        System.out.println(String.format("%.1f", (double) (Processing.waiting[0] + Processing.waiting[1] + Processing.waiting[2]) / 3) + "sec");
         int[] sum = new int[3];
         for (int i = 0; i < 3; i++) {
-            sum[i] = Processing.time[i] + Processing.left[i];
+            sum[i] = Processing.time[i] + Processing.waiting[i];
         }
         System.out.print("평균 반환시간 = (" + sum[0] + " + " + sum[1] + " + " + sum[2] + ") / 3 = ");
         System.out.println(String.format("%.1f", (double) (sum[0] + sum[1] + sum[2]) / 3) + "sec");

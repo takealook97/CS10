@@ -1,9 +1,13 @@
 public class ProcessInfo {
-    char alphabet;
-    int time;
+    char name;
+    int timeProgress;
+    int maxTime;
+    String status;
 
-    public ProcessInfo(char alphabet, int time) {
-        this.alphabet = alphabet;
-        this.time = time;
+    public ProcessInfo(char alphabet, int timeProgress, int maxTime, String status) {
+        this.name = alphabet;
+        this.timeProgress = timeProgress;
+        this.maxTime = maxTime;
+        this.status = status;
     }
 }
