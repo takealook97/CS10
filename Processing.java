@@ -23,15 +23,17 @@ public class Processing {
                 if (!status[0].equals("terminated")) left[0]++;
                 if (!status[1].equals("terminated")) left[1]++;
                 break;
+            } else if (time[2] == Process.processMap.get(Process.process[2])) {
+                getStatus(Process.process[2]);
             }
         }
     }
 
-    String[] getStatus(char input) {
+    void getStatus(char input) {
         for (int i = 0; i < 3; i++) status[i] = "waiting";
         Process process = new Process();
         for (int i = 0; i < 3; i++) {
-            if (Process.process[i] == input && !status[i].equals("terminated")) {
+            if (Process.process[i] == input) {
                 status[i] = "running";
                 break;
             }
@@ -39,6 +41,5 @@ public class Processing {
                 status[i] = "terminated";
             }
         }
-        return status;
     }
 }
