@@ -1,8 +1,8 @@
 public class Output {
     void printInit() {
         System.out.println("프로세스 시간 = A : 3초 | B : 5초 | C : 7초 | D : 10초 | E : 15초 | F : 21초");
-        System.out.println("이 프로그램은 6개의 프로세스(A, B, C, D, E, F) 중 랜덤으로");
-        System.out.println("프로세스A(3초), 프로세스B(5초),프로세스C(7초) 3개를 선택하고 라운드로빈 방식으로 실행합니다.");
+        System.out.println("이 프로그램은 6개의 프로세스(A, B, C, D, E, F) 중 랜덤으로 3개를 선택하고");
+        System.out.println("라운드로빈 방식으로 실행합니다.");
         System.out.println("-----------------------------------------------------------------------");
     }
 
